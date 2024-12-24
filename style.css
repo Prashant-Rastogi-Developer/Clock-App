@@ -1,0 +1,98 @@
+/* -------------------------------------------- */
+/* body */
+:root {
+  --gap: 0.75rem;
+  --white: #fffffe;
+  --black: #121212;
+  --transition: all 0.3s ease;
+  --blur: blur(1rem) saturate(180%);
+  --shadow: 0 1px 2px #12121230, inset 1px 2px 3px #fffffe30;
+}
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  list-style: none;
+  color: currentColor;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+}
+.base {
+  margin: 1rem;
+  padding: var(--gap);
+}
+p {
+  color: var(--black);
+}
+/* -------------------------------------------- */
+@media (prefers-color-scheme: dark) {
+  body {
+    color: var(--white);
+    background-color: var(--black);
+  }
+}
+/* body */
+/* -------------------------------------------- */
+.clock {
+  --size: 20rem;
+  width: var(--size);
+  height: var(--size);
+  position: relative;
+  background-color: var(--white);
+  border-radius: 50%;
+  margin: 0 auto;
+  background-image: url("https://png.pngtree.com/png-clipart/20220708/ourmid/pngtree-clock-face-no-hand-berkshire-swash-font-png-image_5778286.png");
+  background: no-repeat center cover;
+  background-size: contain;
+}
+.point {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #121212;
+  border-radius: 50%;
+  padding: 1rem;
+  z-index: 2;
+}
+.arrow {
+  position: absolute;
+  /* top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+  background-color: var(--black);
+  transform-origin: bottom;
+  transition: var(--transition);
+}
+.hour {
+    width: 16px;
+    height: 5rem;
+    top: 24%;
+    border-radius: 4px;
+    left: 48%;
+  background-color: blue;
+}
+.min {
+  width: 16px;
+  height: 7rem;
+  top: 15%;
+  border-radius: 4px;
+  left: 47.5%;
+  background-color: #444444;
+}
+.sec {
+  width: 7px;
+  height: 9rem;
+  top: 7%;
+  border-radius: 4px;
+  left: 48.9%;
+  background-color: red;
+}
